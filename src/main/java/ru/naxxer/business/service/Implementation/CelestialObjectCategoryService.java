@@ -17,31 +17,34 @@ import ru.naxxer.business.service.ICelestialObjectCategoryService;
 @Transactional
 public class CelestialObjectCategoryService implements ICelestialObjectCategoryService {
 
-    @Autowired
-    ICelestialObjectCategoryDao dao;
+	private final ICelestialObjectCategoryDao dao;
+	private final Mapper mapper;
 
-    @Autowired
-    Mapper mapper;
+	@Autowired
+	public CelestialObjectCategoryService(ICelestialObjectCategoryDao dao, Mapper mapper) {
+		this.dao = dao;
+		this.mapper = mapper;
+	}
 
-    @Override
-    public CelestialObjectCategoryDto save(CelestialObjectCategoryDto newCategory) {
-        CelestialObjectCategory celestialObjectCategory = mapper.map(newCategory, CelestialObjectCategory.class);
-        return mapper.map(dao.save(celestialObjectCategory), CelestialObjectCategoryDto.class);
-    }
+	@Override
+	public CelestialObjectCategoryDto save(CelestialObjectCategoryDto newCategory) {
+		CelestialObjectCategory celestialObjectCategory = mapper.map(newCategory, CelestialObjectCategory.class);
+		return mapper.map(dao.save(celestialObjectCategory), CelestialObjectCategoryDto.class);
+	}
 
-    @Override
-    public CelestialObjectCategoryDto get(Long id) {
-        return mapper.map(dao.findOne(id), CelestialObjectCategoryDto.class);
-    }
+	@Override
+	public CelestialObjectCategoryDto get(Long id) {
+		return mapper.map(dao.findOne(id), CelestialObjectCategoryDto.class);
+	}
 
-    @Override
-    public CelestialObjectCategoryDto update(CelestialObjectCategoryDto newCategory) {
-        CelestialObjectCategory celestialObjectCategory = mapper.map(newCategory, CelestialObjectCategory.class);
-        return mapper.map(dao.save(celestialObjectCategory), CelestialObjectCategoryDto.class);
-    }
+	@Override
+	public CelestialObjectCategoryDto update(CelestialObjectCategoryDto newCategory) {
+		CelestialObjectCategory celestialObjectCategory = mapper.map(newCategory, CelestialObjectCategory.class);
+		return mapper.map(dao.save(celestialObjectCategory), CelestialObjectCategoryDto.class);
+	}
 
-    @Override
-    public void delete(Long id) {
-        dao.delete(id);
-    }
+	@Override
+	public void delete(Long id) {
+		dao.delete(id);
+	}
 }

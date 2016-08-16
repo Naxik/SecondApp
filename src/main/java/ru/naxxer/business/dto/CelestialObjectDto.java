@@ -11,9 +11,10 @@ import lombok.Setter;
 @Setter
 public class CelestialObjectDto {
 
-    Long id;
-    String title;
-    CelestialObjectCategoryDto category;
+	Long id;
+	String title;
+	CelestialObjectCategoryDto category;
 
-    public CelestialObjectDto(){}
+	public CelestialObjectDto() {
+	}
 }

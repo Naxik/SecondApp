@@ -17,27 +17,31 @@ import ru.naxxer.business.service.ICelestialObjectCategoryService;
 @RequestMapping("/category")
 public class CelestialObjectCategoryApiController {
 
-    @Autowired
-    private ICelestialObjectCategoryService service;
+	private final ICelestialObjectCategoryService service;
 
-    @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public ResponseEntity<CelestialObjectCategoryDto> save(@RequestBody CelestialObjectCategoryDto categoryDto) {
-        return new ResponseEntity<>(service.save(categoryDto), HttpStatus.OK);
-    }
+	@Autowired
+	public CelestialObjectCategoryApiController(ICelestialObjectCategoryService service) {
+		this.service = service;
+	}
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<CelestialObjectCategoryDto> get(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(service.get(id), HttpStatus.OK);
-    }
+	@RequestMapping(value = "/new", method = RequestMethod.POST)
+	public ResponseEntity<CelestialObjectCategoryDto> save(@RequestBody CelestialObjectCategoryDto categoryDto) {
+		return new ResponseEntity<>(service.save(categoryDto), HttpStatus.OK);
+	}
 
-    @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public ResponseEntity<CelestialObjectCategoryDto> update(@RequestBody CelestialObjectCategoryDto categoryDto) {
-        return new ResponseEntity<>(service.update(categoryDto), HttpStatus.OK);
-    }
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<CelestialObjectCategoryDto> get(@PathVariable("id") Long id) {
+		return new ResponseEntity<>(service.get(id), HttpStatus.OK);
+	}
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
-        service.delete(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	public ResponseEntity<CelestialObjectCategoryDto> update(@RequestBody CelestialObjectCategoryDto categoryDto) {
+		return new ResponseEntity<>(service.update(categoryDto), HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+		service.delete(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 }

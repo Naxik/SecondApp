@@ -17,12 +17,12 @@ import javax.persistence.*;
 @Table
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class CelestialObjectCategory {
-    @Id
-    @Column
-    @GeneratedValue(generator = "seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "seq", sequenceName = "celestial_objects_category_id_seq", allocationSize = 1)
-    private Long id;
+	@Id
+	@Column
+	@GeneratedValue(generator = "seq", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "seq", sequenceName = "celestial_objects_category_id_seq", allocationSize = 1)
+	private Long id;
 
-    @Column
-    private String title;
+	@Column
+	private String title;
 }

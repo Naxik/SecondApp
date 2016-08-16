@@ -18,16 +18,16 @@ import javax.persistence.*;
 @Table(name = "celestial_objects")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class CelestialObject {
-    @Id
-    @Column
-    @GeneratedValue(generator = "seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "seq", sequenceName = "celestial_objects_id_seq", allocationSize = 1)
-    private Long id;
+	@Id
+	@Column
+	@GeneratedValue(generator = "seq", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "seq", sequenceName = "celestial_objects_id_seq", allocationSize = 1)
+	private Long id;
 
-    @Column
-    private String title;
+	@Column
+	private String title;
 
-    @OneToOne
-    @JoinColumn(name = "category_id")
-    private CelestialObjectCategory category;
+	@OneToOne
+	@JoinColumn(name = "category_id")
+	private CelestialObjectCategory category;
 }

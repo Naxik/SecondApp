@@ -9,8 +9,11 @@ import ru.naxxer.business.dto.CelestialObjectCategoryDto;
 
 public interface ICelestialObjectCategoryService {
 
-    CelestialObjectCategoryDto save(CelestialObjectCategoryDto newCategory);
-    CelestialObjectCategoryDto get(Long id);
-    CelestialObjectCategoryDto update(CelestialObjectCategoryDto newCategory);
-    void delete (Long id);
+	CelestialObjectCategoryDto save(CelestialObjectCategoryDto newCategory);
+
+	CelestialObjectCategoryDto get(Long id);
+
+	CelestialObjectCategoryDto update(CelestialObjectCategoryDto newCategory);
+
+	void delete(Long id);
 }

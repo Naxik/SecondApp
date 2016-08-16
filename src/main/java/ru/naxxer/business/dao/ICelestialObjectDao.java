@@ -10,5 +10,5 @@ import ru.naxxer.business.domain.CelestialObject;
  */
 @Transactional
 public interface ICelestialObjectDao extends CrudRepository<CelestialObject, Long> {
-    CelestialObject findByTitle(String title);
+	CelestialObject findByTitle(String title);
 }

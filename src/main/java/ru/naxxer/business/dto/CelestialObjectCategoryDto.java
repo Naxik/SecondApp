@@ -6,8 +6,9 @@ package ru.naxxer.business.dto;
  */
 public class CelestialObjectCategoryDto {
 
-    Long id;
-    String title;
+	Long id;
+	String title;
 
-    public CelestialObjectCategoryDto(){}
+	public CelestialObjectCategoryDto() {
+	}
 }

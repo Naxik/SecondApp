@@ -13,11 +13,11 @@ import org.springframework.core.io.Resource;
 @Configuration
 public class MappingConfiguration {
 
-    @Bean
-    public DozerBeanMapperFactoryBean dozerBeanMapperFactoryBean(@Value("classpath:**/*mapping.xml") Resource[] mappingFiles) {
-        final DozerBeanMapperFactoryBean dozerBeanMapperFactoryBean = new DozerBeanMapperFactoryBean();
-        // Other configurations
-        dozerBeanMapperFactoryBean.setMappingFiles(mappingFiles);
-        return dozerBeanMapperFactoryBean;
-    }
+	@Bean
+	public DozerBeanMapperFactoryBean dozerBeanMapperFactoryBean(@Value("classpath:**/*mapping.xml") Resource[] mappingFiles) {
+		final DozerBeanMapperFactoryBean dozerBeanMapperFactoryBean = new DozerBeanMapperFactoryBean();
+		// Other configurations
+		dozerBeanMapperFactoryBean.setMappingFiles(mappingFiles);
+		return dozerBeanMapperFactoryBean;
+	}
 }

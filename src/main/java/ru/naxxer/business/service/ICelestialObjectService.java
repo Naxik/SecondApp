@@ -8,9 +8,13 @@ import ru.naxxer.business.dto.CelestialObjectDto;
  */
 public interface ICelestialObjectService {
 
-    CelestialObjectDto save(CelestialObjectDto celestialObjectDto);
-    CelestialObjectDto get(Long id);
-    CelestialObjectDto findByTitle(String title);
-    CelestialObjectDto update(CelestialObjectDto celestialObjectDto);
-    void delete(Long id);
+	CelestialObjectDto save(CelestialObjectDto celestialObjectDto);
+
+	CelestialObjectDto get(Long id);
+
+	CelestialObjectDto findByTitle(String title);
+
+	CelestialObjectDto update(CelestialObjectDto celestialObjectDto);
+
+	void delete(Long id);
 }
